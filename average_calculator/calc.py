@@ -26,10 +26,20 @@ def calculator():
 
 
 def print_average(numbers):
+    
+    if len(numbers) == 0:
+        raise ValueError ("cannot compute average of an empty collection")
+
+
+    
+
     average_value = rounded_average(numbers)
     print(f"The rounded-down average of the numbers you entered is {average_value}")
-
-
+    
 def rounded_average(numbers):
-    avg = sum(numbers) / len(numbers)
-    return floor(avg)
+    # try:
+        avg = sum(numbers) / len(numbers)
+        return floor(avg)
+    # except ValueError :
+        # print("cannot compute average of an empty collection")
+
